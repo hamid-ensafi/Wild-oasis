@@ -1,9 +1,9 @@
 export default function Page() {
   return (
-    <main>
-      <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-        <h1>account page </h1>
-      </div>
-    </main>
+    <div>
+      <h2 className="font-semibold text-2xl text-accent-400 mb-7">
+        Welcome, Hamid
+      </h2>
+    </div>
   );
 }

@@ -7,7 +7,7 @@ const josefin = Josefin_Sans({
 
 import React, { ReactNode } from "react";
 import Header from "@/components/Header";
-import '@/app/globals.css'
+import "@/app/globals.css";
 export const metadata = {
   title: {
     template: "%s / The Wild Oasis",
@@ -19,14 +19,14 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <body
-        className={`${josefin.className} antialiased bg-primary-900 text-primary-100 min-h-screen flex flex-col relative`}
+        className={`${josefin.className} antialiased bg-primary-900 text-primary-100 h-full flex flex-col relative`}
       >
         <Header />
 
-        <div className="flex-1 px-8 py-12 grid">
-          <main className="max-w-7xl mx-auto w-full">{children}</main>
+        <div className="flex-1 px-8 py-12 flex flex-col">
+          <main className="max-w-7xl mx-auto w-full flex-1">{children}</main>
         </div>
       </body>
     </html>
