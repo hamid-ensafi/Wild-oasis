@@ -2,6 +2,7 @@ import SelectCountry from "@/components/SelectCountry";
 import React from "react";
 
 function page() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const countryFlag = "pt.jpg";
   const nationality = "portugal";
   return (

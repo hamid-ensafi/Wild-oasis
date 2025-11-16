@@ -2,7 +2,8 @@ import ReservationCard from "@/components/ReservationCard";
 
 export default function Page() {
   // CHANGE
-  const bookings = [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const bookings: any = [];
 
   return (
     <div>
@@ -19,7 +20,8 @@ export default function Page() {
         </p>
       ) : (
         <ul className="space-y-6">
-          {bookings.map((booking) => (
+          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+          {bookings.map((booking: any) => (
             <ReservationCard booking={booking} key={booking.id} />
           ))}
         </ul>

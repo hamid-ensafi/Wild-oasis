@@ -1,8 +1,9 @@
 // Let's imagine your colleague already built this component 😃
 
-import { getCountries } from "@/lib/service";
+import { getCountries } from "@/services/services-data";
 
-async function SelectCountry({ defaultCountry, name, id, className }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function SelectCountry({ defaultCountry, name, id, className }: { defaultCountry: any, name: any, id: any, className: any }) {
   const countries = await getCountries();
   const flag =
     countries.find((country) => country.name === defaultCountry)?.flag ?? "";

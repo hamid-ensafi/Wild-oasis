@@ -2,13 +2,17 @@ import { PencilSquareIcon } from "@heroicons/react/24/solid";
 import { format, formatDistance, isPast, isToday, parseISO } from "date-fns";
 import Image from "next/image";
 import DeleteReservation from "./DeleteReservation";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { gu } from "date-fns/locale";
 
-export const formatDistanceFromNow = (dateStr) =>
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const formatDistanceFromNow = (dateStr: any) =>
   formatDistance(parseISO(dateStr), new Date(), {
     addSuffix: true,
   }).replace("about ", "");
 
-function ReservationCard({ booking }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function ReservationCard({ booking }: { booking: any }) {
   const {
     id,
     guestId,
@@ -21,7 +25,7 @@ function ReservationCard({ booking }) {
     created_at,
     cabins: { name, image },
   } = booking;
-
+  console.log(guestId, status);
   return (
     <div className="flex border border-primary-800">
       <div className="relative h-32 aspect-square">
