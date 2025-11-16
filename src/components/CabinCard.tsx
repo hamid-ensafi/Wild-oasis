@@ -3,25 +3,6 @@ import { UsersIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
 
-const shimmer = (w: number, h: number) => `
-  <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg" version="1.1">
-    <defs>
-      <linearGradient id="g">
-        <stop stop-color="#111827" offset="20%" />
-        <stop stop-color="#1f2937" offset="50%" />
-        <stop stop-color="#111827" offset="70%" />
-      </linearGradient>
-    </defs>
-    <rect width="${w}" height="${h}" fill="#111827" />
-    <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
-    <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1.2s" repeatCount="indefinite"  />
-  </svg>`;
-
-const toBase64 = (str: string) =>
-  typeof window === "undefined"
-    ? Buffer.from(str).toString("base64")
-    : window.btoa(str);
-
 function CabinCard({ cabin }: { cabin: CabinListItem }) {
   const { id, name, maxCapacity, regularPrice, discount, image } = cabin;
 
@@ -31,8 +12,6 @@ function CabinCard({ cabin }: { cabin: CabinListItem }) {
         <Image
           fill
           src={image}
-          placeholder="blur"
-          blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
           alt={`Cabin ${name}`}
           className="flex-1 border-r border-primary-800"
         />

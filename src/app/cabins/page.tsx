@@ -1,5 +1,5 @@
 import CabinList from "@/components/CabinList";
-import SpinnerMini from "@/components/SpinnerMini";
+import CabinsSpinner from "@/components/CabinsSpinner";
 import { Suspense } from "react";
 
 export default async function Page() {
@@ -16,11 +16,9 @@ export default async function Page() {
         away from home. The perfect spot for a peaceful, calm vacation. Welcome
         to paradise.
       </p>
-      {
-        <Suspense fallback={<SpinnerMini />}>
-          <CabinList />
-        </Suspense>
-      }
+      <Suspense fallback={<CabinsSpinner /> }>
+        <CabinList />
+      </Suspense>
     </div>
   );
 }
