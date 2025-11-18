@@ -6,7 +6,7 @@ export interface Cabin {
   regularPrice: number;
   discount: number;
   description: string;
-  image: string;
+  image: string | null;
 }
 
 export interface CabinPrice {
@@ -20,7 +20,7 @@ export interface CabinListItem {
   maxCapacity: number;
   regularPrice: number;
   discount: number;
-  image: string;
+  image: string | null;
 }
 
 export interface Guest {
@@ -63,10 +63,10 @@ export interface BookingWithCabin {
   cabinId: number;
   cabins: {
     name: string;
-    image: string;
+  image: string | null;
   } | {
     name: string;
-    image: string;
+  image: string | null;
   }[];
 }
 

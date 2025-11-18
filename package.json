@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prod": "npm run build && next start --port 3007"
+    "prod": "npm run build && next start --port 3008"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

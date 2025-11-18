@@ -25,13 +25,14 @@ function ReservationCard({ booking }: { booking: any }) {
     created_at,
     cabins: { name, image },
   } = booking;
+  const imageSrc = image ?? "/wood1.png";
   console.log(guestId, status);
   return (
     <div className="flex border border-primary-800">
       <div className="relative h-32 aspect-square">
         <Image
           fill
-          src={image}
+          src={imageSrc}
           alt={`Cabin ${name}`}
           className="object-cover border-r border-primary-800"
         />

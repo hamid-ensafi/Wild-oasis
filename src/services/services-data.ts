@@ -16,7 +16,7 @@ import type {
   UpdateBookingInput,
 } from "@/types/database.types";
 
-export async function getCabin(id: number): Promise<Cabin | null> {
+export async function getCabin(id: number | string): Promise<Cabin | null> {
   const { data, error } = await supabase
     .from("cabins")
     .select("*")
@@ -24,7 +24,8 @@ export async function getCabin(id: number): Promise<Cabin | null> {
     .single();
 
   if (error) {
-    console.error(error);
+    console.error(error ?? `Cabin ${id} not found`);
+    throw new Error(`${error.message || "Cabin could not be loaded"}`);
   }
 
   return data;
@@ -54,7 +55,7 @@ export const getCabins = async function (): Promise<CabinListItem[]> {
     console.error(error);
     throw new Error("Cabins could not be loaded");
   }
-  await new Promise((resolve) => setTimeout(resolve, 500)); 
+  await new Promise((resolve) => setTimeout(resolve, 500));
 
   return data;
 };

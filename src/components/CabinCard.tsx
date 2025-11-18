@@ -5,15 +5,16 @@ import Link from "next/link";
 
 function CabinCard({ cabin }: { cabin: CabinListItem }) {
   const { id, name, maxCapacity, regularPrice, discount, image } = cabin;
+  const imageSrc = image ?? "/wood1.png";
 
   return (
     <div className="flex border-primary-800 border">
       <div className="flex-1 relative">
         <Image
           fill
-          src={image}
+          src={imageSrc}
           alt={`Cabin ${name}`}
-          className="flex-1 border-r border-primary-800"
+          className="flex-1 border-r border-primary-800 object-cover"
         />
       </div>
 
